@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planetals</title>
+  <meta name="description" content="Explore the Milky Way galaxy, our solar system, and the cosmos in this interactive planetarium experience." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"><span class="logo-dot"></span></span>
+        <span class="logo-text">Planetals</span>
+      </a>
+      <nav class="primary-nav">
+        <a href="index.html" class="nav-link active">Galaxy</a>
+        <a href="#solar-system" class="nav-link">Solar System</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero Section: This is the main banner area at the top of the page -->
+<section class="hero">
+  <!-- Background container (holds the image and overlay) -->
+  <div class="hero-bg">
+    <!-- Main background image of the Milky Way -->
+    <!-- The image must exist in the "images" folder for it to show -->
+    <img src="images/milky-way-hero.png" alt="Milky Way Galaxy" />
+
+    <!-- Overlay layer (usually used for darkening/light effects over the image) -->
+    <!-- This helps text stand out on top of the image -->
+    <div class="hero-overlay"></div>
+  </div>
+  <!-- Content container (text inside the hero section) -->
+  <div class="container hero-content">
+    <!-- Small heading / intro text -->
+    <!-- "reveal" class is likely used for animation (e.g., fade-in) -->
+    <p class="eyebrow reveal">A Journey Through the</p>
+
+    <!-- Main title -->
+    <!-- "display" is usually for large text styling -->
+    <!-- data-delay is likely used in JavaScript to delay animations -->
+    <h1 class="display reveal" data-delay="120">Milky Way</h1>
+    <!-- Description paragraph -->
+    <!-- Also animated with a delay -->
+    <p class="hero-lede reveal" data-delay="280">
+      Look at the edge of the Orion Arm and look out into the vastness.
+      A barred spiral galaxy containing hundreds of billions of planets and stars,
+      and our home in the cosmos.
+    </p>
+  </div>
+
+  <!-- Scroll indicator at the bottom of the hero -->
+  <!-- Tells users to scroll down -->
+  <div class="scroll-cue reveal" data-delay="800">
+
+    <!-- Text for scroll hint -->
+    <span>Scroll to explore</span>
+
+    <!-- Visual line/animation (styled with CSS) -->
+    <div class="scroll-line"></div>
+  </div>
+
+</section>
+    <!-- STATS -->
+    <section class="stats">
+      <div class="container stats-grid">
+        <div class="stat reveal">
+          <div class="stat-value">100,000</div>
+          <div class="stat-suffix">Light Years</div>
+          <div class="stat-label">Diameter</div>
+        </div>
+        <div class="stat reveal" data-delay="100">
+          <div class="stat-value">13.6</div>
+          <div class="stat-suffix">Billion Years</div>
+          <div class="stat-label">Age</div>
+        </div>
+        <div class="stat reveal" data-delay="200">
+          <div class="stat-value">200–400</div>
+          <div class="stat-suffix">Billion</div>
+          <div class="stat-label">Stars</div>
+        </div>
+        <div class="stat reveal" data-delay="300">
+          <div class="stat-value">26,000</div>
+          <div class="stat-suffix">LY from Center</div>
+          <div class="stat-label">Our Position</div>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- NEBULAE -->
+    <section class="split-section">
+      <div class="container split reverse">
+        <div class="split-media reveal">
+          <div class="media-frame tall">
+            <img src="images/nebula.png" alt="Stellar Nebula" />
+          </div>
+        </div>
+        <div class="split-text reveal" data-delay="150">
+          <h2 class="display-md">Stellar Nurseries</h2>
+          <p class="lede">
+            Scattered across the spiral arms are vast clouds of interstellar
+            dust and gas — nebulae. These are the crucibles where new stars
+            are born. Gravity compresses the gas until nuclear fusion ignites,
+            lighting up the cloud from within in brilliant hues of magenta,
+            cyan, and gold.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <section id="solar-system" class="solar-section">
+      <div class="container">
+        <div class="section-head center reveal">
+          <h2 class="display">Our Local Neighborhood</h2>
+          <p class="lede center">
+            Tucked away in the Orion Arm, an unassuming yellow dwarf star holds
+            a system of eight planets in its gravitational embrace.
+          </p>
+        </div>
+
+        <div class="orrery-wrap reveal" data-delay="100">
+          <div class="orrery" id="orrery">
+            <div class="sun" aria-label="The Sun"></div>
+       
+          </div>
+        </div>
+
+        <div class="planet-grid" id="planetGrid">
+          <!-- Planet cards will be injected here by JavaScript -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <span class="logo-mark"><span class="logo-dot"></span></span>
+        <span>Big Planetarium</span>
+      </div>
+      <p class="muted small">
+        A journey through the Milky Way. Imagery courtesy of NASA / ESO / public archives.
+      </p>
+    </div>
+  </footer>
+
+  <script src="planets.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
